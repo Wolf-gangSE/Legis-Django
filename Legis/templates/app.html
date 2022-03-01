@@ -1,0 +1,261 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" type="image/png" href="{% static 'favicon.ico' %}"/>
+        <link rel="stylesheet" href="{% static 'css/custom.css' %}"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+        <title>Legis</title>
+    </head>
+    <body>
+    
+        {% include 'nav.html' %}
+
+        <div class="container bg-light col-md-6 mt-4 rounded shadow-lg">
+
+          <div class="row pt-2 border mb-2 title rounded-top">
+            <h3 class="text-center fs-3 fw-bold text-white">Chat</h3>
+          </div>
+  
+          <div class="row pb-2">
+            <div class="col offset-xs-3">
+
+              <div class="chat-log js-chat-log">
+
+              </div>
+
+            </div>
+          </div>
+          <div class="row pt-2 pb-2 input-row border rounded-bottom">
+            <div class="input-group input-group-lg align-items-center">
+              <input type="text" class="form-control js-text" placeholder="Escreva sua mensagem..."/>
+              <button class="btn btn-secondary js-say">Enviar</button>
+            </div>
+          </div>
+        </div>
+        <footer class=" text-center text-lg-start text-white mt-4 bg-light border">
+          <div class="text-center p-3 text-muted" style="background-color: rgba(0, 0, 0, 0.1);">
+            Chat Icons made by <a href="https://www.freepik.com" title="Freepik" class="text-reset">Freepik</a> from <a class="text-reset" href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a>
+          </div>
+        </footer>
+        <script src="{% static 'js/jquery-3.6.0.js' %}"></script>
+        <script src="{% static 'js/js.cookies.js' %}"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+        <script>
+            var BOT_IMG = "{% static 'images/bot.svg' %}";
+            var PERSON_IMG = "{% static 'images/user.svg' %}";
+            var BOT_NAME = "Legis";
+            var PERSON_NAME = "Você";
+            var BOT_COLOR = "bg-white";
+            var PERSON_COLOR = "bg-primary";
+
+            $(document).ready(function() {
+              var $row = $(`
+              <div class="msg left-msg">
+                  <div class="msg-img" style="background-image: url(${BOT_IMG})"></div>
+                
+                  <div class="msg-bubble ${BOT_COLOR} border">
+                    <div class="msg-info">
+                      <div class="msg-info-name">${BOT_NAME}</div>
+                      <div class="msg-info-time">${formatDate(new Date())}</div>
+                    </div>
+                    <div class="msg-text">Olá, eu sou o Legis! Ficarei feliz em lhe ajudar.<br/> Para registrar um novo caso basta digitar "quero registrar um novo caso".</div>
+                  </div>
+                </div>
+              `);
+              $chatlog.append($row);
+            });
+
+            var chatterbotUrl = '{% url "chatterbot" %}';
+            var legisUrl = '{% url "legis" %}';
+            var csrftoken = Cookies.get('csrftoken');
+      
+            function csrfSafeMethod(method) {
+              // these HTTP methods do not require CSRF protection
+              return (/^(GET|HEAD|OPTIONS|TRACE)$/.test(method));
+            }
+            
+            $.ajaxSetup({
+              beforeSend: function(xhr, settings) {
+                if (!csrfSafeMethod(settings.type) && !this.crossDomain) {
+                  xhr.setRequestHeader("X-CSRFToken", csrftoken);
+                }
+              }
+            });
+      
+            var $chatlog = $('.js-chat-log');
+            var $input = $('.js-text');
+            var $sayButton = $('.js-say');
+            // Create a chat row
+            function createRow(name, img, side, text, color, id="") {
+              var $row = $(`
+              <div class="msg ${side}-msg" id=${id}>
+                  <div class="msg-img" style="background-image: url(${img})"></div>
+                
+                  <div class="msg-bubble ${color} border">
+                    <div class="msg-info">
+                      <div class="msg-info-name">${name}</div>
+                      <div class="msg-info-time">${formatDate(new Date())}</div>
+                    </div>
+                  
+                    <div class="msg-text" id="${id}-text">${text}</div>
+                  </div>
+                </div>
+              `);
+              $chatlog.append($row);
+            }
+            function formatDate(date) {
+              const h = "0" + date.getHours();
+              const m = "0" + date.getMinutes();
+
+              return `${h.slice(-2)}:${m.slice(-2)}`;
+            }
+            function submitInput() {
+              var inputData = {
+                'text': $input.val()
+              }
+
+              if (inputData.text == "Quero registrar um novo caso" || inputData.text == "quero registrar um novo caso" || inputData.text == "QUERO REGISTRAR UM NOVO CASO" || inputData.text == "Quero registrar um caso" || inputData.text == "quero registrar um caso" || inputData.text == "QUERO REGISTRAR UM CASO") {
+                // Clean the input field
+                $input.val('');
+                // Display the user's input on the web page
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR);
+                // Display the bot's input on the web page
+                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Você poderia informar qual a ação cometida? (Subtração, Agressão ou Homicído)", BOT_COLOR, "Action");
+                // Scroll to the bottom of the chat
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Action').length && !($('#Actor').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Action_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Ok! Quem realizou a ação?", BOT_COLOR, "Actor");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Actor').length && !($('#Actor_age').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Sobre o agente dessa ação, qual sua idade?", BOT_COLOR, "Actor_age");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Actor_age').length && !($('#Actor_disorder').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_age_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Ele apresenta algum transtorno mental?", BOT_COLOR, "Actor_disorder");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Actor_disorder').length && !($('#Actor_filed').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_disorder_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Já é fichado?", BOT_COLOR, "Actor_filed");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Actor_filed').length && !($('#Actor_militia').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_filed_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Faz parte de Milícia?", BOT_COLOR, "Actor_militia");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Actor_militia').length && !($('#Victim').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_militia_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Contra quem foi realizada essa ação?", BOT_COLOR, "Victim");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Victim').length && !($('#Violation').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_victim_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "O que foi violado?", BOT_COLOR, "Violation");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Violation').length && !($('#Intention').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_violation_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Qual foi a intenção? (Matar, Roubar, Inutilizar, Vantagem Econômica ou Não Intencional)", BOT_COLOR, "Intention");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Intention').length && !($('#Victim_age').length)) {
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_intetion_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Qual a idade da vítima?", BOT_COLOR, "Victim_age");
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+
+              } else if ($('#Victim_age').length && !($('#End').length)){
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Victim_age_ans");
+                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Aguarde um pouco enquanto faço as inferências.", BOT_COLOR, "Final_msg")
+                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                // Storage the user's answers
+                var answers = {
+                  'Action_ans': $('#Action_ans-text').text(),
+                  'Actor_ans': $('#Actor_ans-text').text(),
+                  'Actor_age_ans': $('#Actor_age_ans-text').text(),
+                  'Actor_disorder_ans': $('#Actor_disorder_ans-text').text(),
+                  'Actor_filed_ans': $('#Actor_filed_ans-text').text(),
+                  'Actor_militia_ans': $('#Actor_militia_ans-text').text(),
+                  'Actor_victim_ans': $('#Actor_victim_ans-text').text(),
+                  'Actor_violation_ans': $('#Actor_violation_ans-text').text(),
+                  'Actor_intetion_ans': $('#Actor_intetion_ans-text').text(),
+                  'Victim_age_ans': $('#Victim_age_ans-text').text()
+                }
+
+                // Connection to the Legis's API
+                var $submit = $.ajax({
+                  type: 'POST',
+                  url: legisUrl,
+                  data: JSON.stringify(answers),
+                  contentType: 'application/json'
+                });
+        
+                $submit.done(function(statement) {
+                  createRow(BOT_NAME, BOT_IMG, "left", statement.text, BOT_COLOR, "End");
+                  $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                });
+        
+                $submit.fail(function() {
+                  createRow(BOT_NAME, BOT_IMG, "left", "Algo deu errado. Por favor, tente novamente.", BOT_COLOR);
+                });
+
+
+              } else {
+                // Connection to the Chatterbot's API
+                $input.val('');
+                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR);
+                var $submit = $.ajax({
+                  type: 'POST',
+                  url: chatterbotUrl,
+                  data: JSON.stringify(inputData),
+                  contentType: 'application/json'
+                });
+        
+                $submit.done(function(statement) {
+                    createRow(BOT_NAME, BOT_IMG, "left", statement.text, BOT_COLOR);
+                    
+                    // Scroll to the bottom of the chat interface
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                });
+        
+                $submit.fail(function() {
+                    createRow(BOT_NAME, BOT_IMG, "left", "Algo deu errado. Por favor, tente novamente.", BOT_COLOR);
+                    
+                    // Scroll to the bottom of the chat interface
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                });
+                }
+            }
+            // Submit the input when the input button is pressed
+            $sayButton.click(function() {
+              submitInput();
+            });
+      
+            $input.keydown(function(event) {
+              // Submit the input when the enter is pressed
+              if (event.keyCode == 13) {
+                submitInput();
+              }
+            });
+        </script>
+    </body>
+</html>

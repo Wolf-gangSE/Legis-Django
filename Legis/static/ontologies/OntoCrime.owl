@@ -1,0 +1,2251 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10"
+     xml:base="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#allows -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#allows">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAllowedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#bears -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#bears">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntrinsecMoment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#causedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#causedBy">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Moment"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#dependenceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#dependenceOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#disallows -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#disallows">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDisallowedBy"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCircumstance -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCircumstance">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfSituation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCivilRepresentant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCivilRepresentant">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#JuridicalPerson"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCriminalAct -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCriminalAct">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasDisallowedSituation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasDisallowedSituation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasDisallowedSituation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPosSituation"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasEndurant -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasEndurant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPosSituation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPosSituation">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPosStateOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPreSituation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPreSituation">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPunishment -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPunishment">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasRegister -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasRegister">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Register"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasViolatedObject -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasViolatedObject"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#inheresIn -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#inheresIn">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntentionalMoment"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#injures -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#injures">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAllowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAllowedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAssociatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAssociatedTo">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAuthorOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAuthorOf">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isChosenwrt -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isChosenwrt">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDisallowedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDisallowedBy"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfPositiveLaw -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfPositiveLaw">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNorm"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfRule -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfRule">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOf"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfSituation -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfSituation">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOf"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Circumstance"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPosStateOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPosStateOf"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isQualifiedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isQualifiedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#qualifies"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isRecognizedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isRecognizedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#recognizes"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#State"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ldefines_remover_talvez -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ldefines_remover_talvez">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#match -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#match">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FelonyOmission"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ComissiveCrime"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relator"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#overrules -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#overrules">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isChosenwrt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Participation"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#protects -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#protects">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guaranteed"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#qualifies -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#qualifies"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#recognizes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#recognizes"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#specializes -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#specializes">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isChosenwrt"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#updates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#updates">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isChosenwrt"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#violates -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#violates">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Ability -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Ability">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntrinsecMoment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbstractObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbstractObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbuseOfAuthority -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbuseOfAuthority">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbuseOfPower -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbuseOfPower">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Action -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Action">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActionContribution -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActionContribution">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Action"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAuthorOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#injures"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Underage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentMisfortune -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentMisfortune">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentOverSeventy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentOverSeventy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentOverSixty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentOverSixty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentParticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentParticipation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Participation"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ObjectParticipation[ObjectParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentUnderFourteen -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentUnderFourteen">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Underage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentUnderTwentyOne -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentUnderTwentyOne">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Circumstance"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AncientRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AncientRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Belief -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Belief">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Desire"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CNPJ -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CNPJ">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Register"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CPF -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CPF">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Register"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Circumstance -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Circumstance">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfSituation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CollectiveSocialAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CollectiveSocialAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ComissiveCrime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ComissiveCrime">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Crime"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#OmissiveCrime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ConcealingOtherCrime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ConcealingOtherCrime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ConflictSituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ConflictSituation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Crime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Crime">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAuthor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAuthor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyLiable"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyLiable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isAssociatedTo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeRelator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalAct">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#causedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Intention"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActiveAgent"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalLawRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminalLawRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyIncapable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyIncapable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallySick"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Underage"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyLiable"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyLiable -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CriminallyLiable">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallyHealthy"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Adult"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallyHealthy"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CruelMeansEmployment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CruelMeansEmployment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAuthor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DamageRepair -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DamageRepair">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DeprivingLiberty -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DeprivingLiberty">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Fine"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RestrictingRight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Desire -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Desire">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Intention"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DomesticViolence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DomesticViolence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DrinkingDriveLawRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DrinkingDriveLawRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DutyToAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DutyToAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialCommitment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#EnvironmentLawRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#EnvironmentLawRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#EscapeFromCrimeScene -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#EscapeFromCrimeScene">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Perdurant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPosSituation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPreSituation"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FelonyOmission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FelonyOmission">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalFelonyOmission"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#OmissiveCrime"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#match"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ComissiveCrime"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FemaleDiscrimination -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FemaleDiscrimination">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Fine -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Fine">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RestrictingRight"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FrivolousReason -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#FrivolousReason">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Fulfilled -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Fulfilled">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Unfulfilled"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GeneralRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GeneralRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guaranteed -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guaranteed">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#protects"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guaranteed"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GuarantorSkilledPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GuarantorSkilledPerson">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledPerson"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Handicapped -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Handicapped">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#HeatOfPassion -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#HeatOfPassion">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Honor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Honor">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbstractObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Incriminating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Incriminating">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#disallows"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#disallows"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NonIncriminating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InferiorRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InferiorRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#overrules"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InferiorRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InstitutionalAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InstitutionalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Intention -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Intention">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntentionalMoment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntentionalMoment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntrinsecMoment"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#inheresIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntrinsecMoment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntrinsecMoment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#JuridicalPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#JuridicalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InstitutionalAgent"/>
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasCivilRepresentant"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasRegister"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CNPJ"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActionContribution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalCareRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalCareRelator">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guaranteed"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalFelonyOmission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalFelonyOmission">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledGuarantorParticipation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPreSituation"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MandatorySituation"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasEndurant"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledSpecificDutyToAct"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledGuarantorParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNorm -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNorm">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfPositiveLaw"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormativeDescription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#defines"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalOmission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalOmission">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledAgentParticipation"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPreSituation"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:intersectionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MandatorySituation"/>
+                                    <owl:Restriction>
+                                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasEndurant"/>
+                                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledDutyToAct"/>
+                                    </owl:Restriction>
+                                </owl:intersectionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relator"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#dependenceOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Principle"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isDefinedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNorm"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Principle"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexPosteriorRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexPosteriorRelator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexSpecialisRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexSpecialisRelator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexSuperiorRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LexSuperiorRelator">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Life -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Life">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbstractObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Man -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Man">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MandatorySituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MandatorySituation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MaterialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MaterialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentalMoment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntentionalMoment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallyHealthy -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallyHealthy">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallySick"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallySick -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MentallySick">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Circumstance"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Moment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Moment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#dependenceOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MoralReason -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MoralReason">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalAgent"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasRegister"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CPF"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NoHarmReducation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NoHarmReducation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NonIncriminating -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NonIncriminating">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#allows"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#allows"/>
+                        <owl:allValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormRelator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormRelator">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormativeDescription -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NormativeDescription">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Obligation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Obligation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Permission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#OmissiveCrime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#OmissiveCrime">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Crime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Participation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Participation">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Event"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveJuridicalPerson"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassivePerson"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveSociety"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveJuridicalPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveJuridicalPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#JuridicalPerson"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassivePerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassivePerson">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveSociety -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveSociety">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PassiveAgent"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Society"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Perdurant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Perdurant"/>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Permission -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Permission">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalBody -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalBody">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#MaterialObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PhysicalObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PositiveLaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNormativeDescription"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isRecognizedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ldefines_remover_talvez"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeAgent"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ldefines_remover_talvez"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PrecludeDefense -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PrecludeDefense">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Pregnant -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Pregnant">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Woman"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Principle -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Principle">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalNorm"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Prohibition -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Prohibition">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Permission"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PropertyLawRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PropertyLawRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Psychological -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Psychological">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AbstractObject"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ActionContribution"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfRule"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#performanceOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#State"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PureOmissiveCrime -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PureOmissiveCrime">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CulpableEvent"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalOmission"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent"/>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#OmissiveCrime"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRelator"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#QualifiedSituation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isQualifiedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Qualification"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#isPartOfRule"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RecentRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RecentRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#updates"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AncientRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Recurrence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Recurrence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Register -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Register">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relative -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relative">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RelativePresence -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RelativePresence">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relator -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Relator">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#mediates"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Moment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ResistibleDuress -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ResistibleDuress">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RestrictingRight -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#RestrictingRight">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#PunishmentAct"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Situation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasEndurant"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledAgentParticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledAgentParticipation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledPerson"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AgentParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledGuarantorParticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledGuarantorParticipation">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#causedBy"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Desire"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GuarantorSkilledPerson"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledAgentParticipation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledPerson -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SkilledPerson">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#bears"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Ability"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialAgent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialAgent">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Agent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialCommitment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialCommitment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialMoment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialMoment -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialMoment">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#IntentionalMoment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialObject -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialObject">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialReason -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SocialReason">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Society -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Society">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CollectiveSocialAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SpecificDutyToAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SpecificDutyToAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DutyToAct"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#inheresIn"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Guarantor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SpecificRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SpecificRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#specializes"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#GeneralRule"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#State -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#State">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#InstitutionalAgent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Substantial">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Endurant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SuperiorRule -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SuperiorRule">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalRule"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Turmoil -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Turmoil">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#TypicalEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasPosSituation"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Underage -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Underage">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfamiliairtyofLaw -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfamiliairtyofLaw">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Unfulfilled -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Unfulfilled">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Commitment"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledDutyToAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledDutyToAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DutyToAct"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Unfulfilled"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledSpecificDutyToAct -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnfulfilledSpecificDutyToAct">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#SpecificDutyToAct"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Unfulfilled"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#UnlawfulEvent">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#violates"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CrimeObject"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#LegalEvent"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#VoluntaryConfession -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#VoluntaryConfession">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Mitigating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#WithoutImmediateAid -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#WithoutImmediateAid">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Aggravating"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Woman -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Woman">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ObjectParticipation[ObjectParticipation -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ObjectParticipation[ObjectParticipation">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#participationOf"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Object"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#Participation"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <owl:Class>
+        <owl:intersectionOf rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#AllowedSituation"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#DisallowedSituation"/>
+        </owl:intersectionOf>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#ConflictSituation"/>
+    </owl:Class>
+    <owl:Restriction>
+        <owl:onProperty rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#hasRegister"/>
+        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#CPF"/>
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#NaturalPerson"/>
+    </owl:Restriction>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+
