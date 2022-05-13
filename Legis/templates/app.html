@@ -72,6 +72,7 @@
             var chatterbotUrl = '{% url "chatterbot" %}';
             var legisUrl = '{% url "legis" %}';
             var csrftoken = Cookies.get('csrftoken');
+            console.log(String(csrftoken))
       
             function csrfSafeMethod(method) {
               // these HTTP methods do not require CSRF protection

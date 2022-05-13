@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from Legis.views import ChatterBotAppView, ChatterBotApiView, LegisApiView
+from django.views.decorators.csrf import ensure_csrf_cookie
 
 urlpatterns = [
-    path('', ChatterBotAppView.as_view(), name='home'),
+    path('', ensure_csrf_cookie(ChatterBotAppView.as_view()), name='home'),
     path('admin/', admin.site.urls, name='admin'),
     path('api/chatterbot/', ChatterBotApiView.as_view(), name='chatterbot'),
     path('api/legis/', LegisApiView.as_view(), name='legis')

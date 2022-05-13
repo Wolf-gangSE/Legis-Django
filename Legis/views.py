@@ -8,7 +8,6 @@ from django.http import JsonResponse
 from chatterbot import ChatBot
 from chatterbot.ext.django_chatterbot import settings
 
-
 class ChatterBotAppView(TemplateView):
     template_name = 'app.html'
 
