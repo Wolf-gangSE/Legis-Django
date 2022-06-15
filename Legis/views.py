@@ -1,4 +1,5 @@
 import json
+import spacy
 import owlready2 as owl
 from owlready2.reasoning import sync_reasoner_hermit
 from .ontology import Ontology as onto
@@ -46,6 +47,13 @@ class ChatterBotApiView(View):
         return JsonResponse({
             'name': self.chatterbot.name
         })
+
+class LegisNerApiView(View):
+    def post(self, request, *args, **kwargs):
+        nlp_ner = spacy.load("./model-best/")
+
+        doc = nlp_ner('''Lucas Henrique subtraiu, utilizando-se de ameaça, um relógio de ouro da propriedade de Almeida. O reú é menor de 21 anos, reincidente e confessou a ação.''')
+        return None
     
 class LegisApiView(View):
     
@@ -55,8 +63,8 @@ class LegisApiView(View):
         '''
         input_data = json.loads(request.body.decode('utf-8'))
 
-        property_ontology = owl.get_ontology("/Users/lucas/IC - Legis/Legis/Legis/static/ontologies/OntoProperty.owl")
-        crime_ontology = owl.get_ontology("/Users/lucas/IC - Legis/Legis/Legis/static/ontologies/OntoCrime.owl").load()
+        property_ontology = owl.get_ontology("./Legis/static/ontologies/OntoProperty.owl")
+        crime_ontology = owl.get_ontology("./Legis/static/ontologies/OntoCrime.owl").load()
         property_ontology.load()
 
         acao = str(input_data["Action_ans"])
