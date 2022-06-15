@@ -3,6 +3,7 @@ import spacy
 import owlready2 as owl
 from owlready2.reasoning import sync_reasoner_hermit
 from .ontology import Ontology as onto
+from .ner import NER as ner
 from django.views.generic.base import TemplateView
 from django.views.generic import View
 from django.http import JsonResponse
@@ -50,10 +51,14 @@ class ChatterBotApiView(View):
 
 class LegisNerApiView(View):
     def post(self, request, *args, **kwargs):
-        nlp_ner = spacy.load("./model-best/")
 
-        doc = nlp_ner('''Lucas Henrique subtraiu, utilizando-se de ameaça, um relógio de ouro da propriedade de Almeida. O reú é menor de 21 anos, reincidente e confessou a ação.''')
-        return None
+        input_data = json.loads(request.body.decode('utf-8'))
+
+        output = list(ner.ner_spacy(input_data["text"]))
+        
+        return JsonResponse({
+            'NER': output
+        })
     
 class LegisApiView(View):
     
