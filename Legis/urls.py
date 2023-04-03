@@ -15,12 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from Legis.views import ChatterBotAppView, ChatterBotApiView, LegisApiView
+from Legis.views import ChatterBotAppView, ChatterBotApiView, LegisApiView, LegisNerApiView, LegisOntologyApiView
 from django.views.decorators.csrf import ensure_csrf_cookie
 
 urlpatterns = [
     path('', ensure_csrf_cookie(ChatterBotAppView.as_view()), name='home'),
     path('admin/', admin.site.urls, name='admin'),
     path('api/chatterbot/', ChatterBotApiView.as_view(), name='chatterbot'),
-    path('api/legis/', LegisApiView.as_view(), name='legis')
+    path('api/legis/', LegisApiView.as_view(), name='legis'),
+    path('api/legis/ner/', LegisNerApiView.as_view(), name='ner'),
+    path('api/legis/ontology', LegisOntologyApiView.as_view(), name='ontology')
 ]
