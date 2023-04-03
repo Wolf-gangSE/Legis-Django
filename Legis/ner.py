@@ -6,5 +6,10 @@ class NER():
 
     doc = ner(text)
 
+    entities = {}
     for ent in doc.ents:
-      yield ent.text, ent.label_
+      entities[ent.label_] = ent.text
+      #yield ent.label_, ent.text
+    return entities
+    
+      
