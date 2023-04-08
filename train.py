@@ -9,11 +9,11 @@ training_data = [
   "oii",
   "ola",
   "quem é você",
-  "Eu sou o Legis, um assistente feito para simulação de inferências jurídicas dos crimes contra o patrimônio e apoiar o processo de tomada de decisão",
+  "Eu sou o Legis, um assistente feito para simulação de inferências jurídicas dos crimes contra o patrimônio e apoiar o processo de tomada de decisão.",
   "o que você é",
   "Sou um assistente feito para simulação de inferências jurídicas dos crimes contra o patrimônio e apoiar o processo de tomada de decisão",
   "o que você pode fazer",
-  "Eu posso regitrar um novo caso de crime e gerar inferências jurícas para você. Basta dizer: 'quero registrar um novo caso'"
+  "Eu posso regitrar um novo caso de crime e gerar inferências jurícas para você. Basta dizer: 'quero registrar um novo caso'."
 ]
 
 #Chama o treinador do bot

@@ -14,7 +14,7 @@
     
         {% include 'nav.html' %}
 
-        <div class="container bg-light col-md-6 mt-4 rounded shadow-lg">
+        <div class="container bg-light col-md-6 mt-4 rounded shadow-lg" id="chat">
 
           <div class="row pt-2 border mb-2 title rounded-top">
             <h3 class="text-center fs-3 fw-bold text-white">Chat</h3>
@@ -54,7 +54,7 @@
 
             $(document).ready(function() {
               var $row = $(`
-              <div class="msg left-msg">
+                <div class="msg left-msg">
                   <div class="msg-img" style="background-image: url(${BOT_IMG})"></div>
                 
                   <div class="msg-bubble ${BOT_COLOR} border">
@@ -62,7 +62,7 @@
                       <div class="msg-info-name">${BOT_NAME}</div>
                       <div class="msg-info-time">${formatDate(new Date())}</div>
                     </div>
-                    <div class="msg-text">Olá, eu sou o Legis! Ficarei feliz em lhe ajudar.<br/> Para registrar um novo caso basta digitar "quero registrar um novo caso".</div>
+                    <div class="msg-text">Olá, eu sou o Legis! Ficarei feliz em lhe ajudar.<br/> Para realizar uma inferência de um novo caso basta digitar "quero realizar uma nova inferência".</div>
                   </div>
                 </div>
               `);
@@ -70,9 +70,10 @@
             });
 
             var chatterbotUrl = '{% url "chatterbot" %}';
-            var legisUrl = '{% url "legis" %}';
+            var ontoUrl = '{% url "ontology" %}';
+            var nerUrl = '{% url "ner" %}';
             var csrftoken = Cookies.get('csrftoken');
-            console.log(String(csrftoken))
+            // console.log(String(csrftoken))
       
             function csrfSafeMethod(method) {
               // these HTTP methods do not require CSRF protection
@@ -93,7 +94,7 @@
             // Create a chat row
             function createRow(name, img, side, text, color, id="") {
               var $row = $(`
-              <div class="msg ${side}-msg" id=${id}>
+                <div class="msg ${side}-msg" id=${id}>
                   <div class="msg-img" style="background-image: url(${img})"></div>
                 
                   <div class="msg-bubble ${color} border">
@@ -119,100 +120,53 @@
                 'text': $input.val()
               }
 
-              if (inputData.text == "Quero registrar um novo caso" || inputData.text == "quero registrar um novo caso" || inputData.text == "QUERO REGISTRAR UM NOVO CASO" || inputData.text == "Quero registrar um caso" || inputData.text == "quero registrar um caso" || inputData.text == "QUERO REGISTRAR UM CASO") {
+              // Display the user's input on the web page
+              createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR);
+
+              if (inputData.text.toUpperCase() == "QUERO REALIZAR UMA NOVA INFERÊNCIA") {
                 // Clean the input field
                 $input.val('');
-                // Display the user's input on the web page
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR);
                 // Display the bot's input on the web page
-                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Você poderia informar qual a ação cometida? (Subtração, Agressão ou Homicído)", BOT_COLOR, "Action");
+                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Você poderia informar o que ocorreu?", BOT_COLOR, "question");
+                // Create a hidden input to identify the action
+                $('#chat').append('<input type="hidden" id="action" />');
                 // Scroll to the bottom of the chat
                 $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
 
-              } else if ($('#Action').length && !($('#Actor').length)) {
+              } else if ($('#action').length > 0) {
                 $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Action_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Ok! Quem realizou a ação?", BOT_COLOR, "Actor");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Actor').length && !($('#Actor_age').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Sobre o agente dessa ação, qual sua idade?", BOT_COLOR, "Actor_age");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Actor_age').length && !($('#Actor_disorder').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_age_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Ele apresenta algum transtorno mental?", BOT_COLOR, "Actor_disorder");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Actor_disorder').length && !($('#Actor_filed').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_disorder_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Já é fichado?", BOT_COLOR, "Actor_filed");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Actor_filed').length && !($('#Actor_militia').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_filed_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Faz parte de Milícia?", BOT_COLOR, "Actor_militia");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Actor_militia').length && !($('#Victim').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_militia_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Contra quem foi realizada essa ação?", BOT_COLOR, "Victim");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Victim').length && !($('#Violation').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_victim_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "O que foi violado?", BOT_COLOR, "Violation");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Violation').length && !($('#Intention').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_violation_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Qual foi a intenção? (Matar, Roubar, Inutilizar, Vantagem Econômica ou Não Intencional)", BOT_COLOR, "Intention");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Intention').length && !($('#Victim_age').length)) {
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Actor_intetion_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Qual a idade da vítima?", BOT_COLOR, "Victim_age");
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-
-              } else if ($('#Victim_age').length && !($('#End').length)){
-                $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR, "Victim_age_ans");
-                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Aguarde um pouco enquanto faço as inferências.", BOT_COLOR, "Final_msg")
-                $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
-                // Storage the user's answers
-                var answers = {
-                  'Action_ans': $('#Action_ans-text').text(),
-                  'Actor_ans': $('#Actor_ans-text').text(),
-                  'Actor_age_ans': $('#Actor_age_ans-text').text(),
-                  'Actor_disorder_ans': $('#Actor_disorder_ans-text').text(),
-                  'Actor_filed_ans': $('#Actor_filed_ans-text').text(),
-                  'Actor_militia_ans': $('#Actor_militia_ans-text').text(),
-                  'Actor_victim_ans': $('#Actor_victim_ans-text').text(),
-                  'Actor_violation_ans': $('#Actor_violation_ans-text').text(),
-                  'Actor_intetion_ans': $('#Actor_intetion_ans-text').text(),
-                  'Victim_age_ans': $('#Victim_age_ans-text').text()
-                }
+                createRow(BOT_NAME, BOT_IMG, "left", "Tudo bem! Aguarde um pouco enquanto faço as inferências.", BOT_COLOR, "Final_msg");
 
                 // Connection to the Legis's API
                 var $submit = $.ajax({
                   type: 'POST',
-                  url: legisUrl,
-                  data: JSON.stringify(answers),
+                  url: nerUrl,
+                  data: JSON.stringify(inputData),
                   contentType: 'application/json'
                 });
         
                 $submit.done(function(statement) {
-                  createRow(BOT_NAME, BOT_IMG, "left", statement.text, BOT_COLOR, "End");
+                  console.log(statement.NER);
                   $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                  $('#action').remove();
+
+                  var $submitLegis = $.ajax({
+                    type: 'POST',
+                    url: ontoUrl,
+                    data: JSON.stringify(statement.NER),
+                    contentType: 'application/json'
+                  });
+
+                  $submitLegis.done(function(statement) {
+                    //console.log(statement);
+                    createRow(BOT_NAME, BOT_IMG, "left", statement.text, BOT_COLOR, "End");
+                    $chatlog[0].scrollTop = $chatlog[0].scrollHeight;
+                  });
+
+                  $submitLegis.fail(function() {
+                    createRow(BOT_NAME, BOT_IMG, "left", "Algo deu errado. Por favor, tente novamente.", BOT_COLOR);
+                  });
+
                 });
         
                 $submit.fail(function() {
@@ -221,9 +175,9 @@
 
 
               } else {
+                //console.log("else");
                 // Connection to the Chatterbot's API
                 $input.val('');
-                createRow(PERSON_NAME, PERSON_IMG, "right", inputData.text, PERSON_COLOR);
                 var $submit = $.ajax({
                   type: 'POST',
                   url: chatterbotUrl,
