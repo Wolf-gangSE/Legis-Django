@@ -2,18 +2,18 @@
   "lang":"pt",
   "name":"pipeline",
   "version":"0.0.0",
-  "spacy_version":">=3.3.1,<3.4.0",
+  "spacy_version":">=3.5.1,<3.6.0",
   "description":"",
   "author":"",
   "email":"",
   "url":"",
   "license":"",
-  "spacy_git_version":"5fb597f77",
+  "spacy_git_version":"8153bd573",
   "vectors":{
-    "width":0,
-    "vectors":0,
-    "keys":0,
-    "name":null,
+    "width":300,
+    "vectors":500000,
+    "keys":500000,
+    "name":"pt_vectors",
     "mode":"default"
   },
   "labels":{
@@ -22,18 +22,31 @@
     ],
     "ner":[
       "ACTOR",
+      "ACTOR-OVER-SEVENTY",
+      "ACTOR-UNDER-TWENTY-ONE",
+      "ACTOR-UNDERAGE",
       "AGRESSION",
-      "CRIME",
-      "ESCAPE",
-      "INTENTION",
+      "CRIME-OBJECT-CHATTEL-OBJECT",
+      "CRIME-OBJECT-PHYSICAL-BODY",
+      "CRIME-OBJECT-PSYCHOLOGICAL",
+      "DAMAGING",
+      "ESCAPE-FROM-CRIME-SCENE",
+      "INTENTION-DEATH",
+      "INTENTION-ECONOMIC-ADVANTAGE",
+      "INTENTION-MAKE-UNUSABLE",
+      "INTENTION-STEALING",
       "MURDER",
-      "PRECLUDE",
+      "PRECLUDE-DEFENSE",
       "RECURRENCE",
       "RELATIVE",
-      "SOCIAL",
+      "SOCIAL-REASON",
       "SUBTRACTION",
       "VICTIM",
-      "VOLUNTARY"
+      "VICTIM-DECEASED",
+      "VICTIM-OVER-SIXTY",
+      "VICTIM-UNDER-FOURTEEN",
+      "VICTIM-WOMAN",
+      "VOLUNTARY-CONFESSION"
     ]
   },
   "pipeline":[
@@ -48,124 +61,124 @@
 
   ],
   "performance":{
-    "ents_f":0.9703764199,
-    "ents_p":0.9556887979,
-    "ents_r":0.9855225456,
+    "ents_f":0.8279537799,
+    "ents_p":0.8717004848,
+    "ents_r":0.7883881445,
     "ents_per_type":{
       "ACTOR":{
-        "p":0.9599474721,
-        "r":0.9932065217,
-        "f":0.976293823
+        "p":0.894284647,
+        "r":0.8782098313,
+        "f":0.8861743476
       },
       "INTENTION-STEALING":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
+        "p":0.7441860465,
+        "r":0.7191011236,
+        "f":0.7314285714
       },
       "SUBTRACTION":{
-        "p":0.9647577093,
-        "r":0.9943246311,
-        "f":0.9793180548
+        "p":0.9254079254,
+        "r":0.9508982036,
+        "f":0.9379799173
       },
       "CRIME-OBJECT-CHATTEL-OBJECT":{
-        "p":0.9451560527,
-        "r":0.9855154251,
-        "f":0.9649138963
+        "p":0.8594249201,
+        "r":0.8050678372,
+        "f":0.8313588132
       },
       "AGRESSION":{
-        "p":1.0,
-        "r":0.9290780142,
-        "f":0.9632352941
+        "p":0.6689189189,
+        "r":0.8114754098,
+        "f":0.7333333333
       },
       "VICTIM":{
-        "p":0.9944674965,
-        "r":0.9883161512,
-        "f":0.991382282
+        "p":0.8763222132,
+        "r":0.8031319911,
+        "f":0.8381322957
       },
       "CRIME-OBJECT-PHYSICAL-BODY":{
-        "p":0.8924731183,
-        "r":1.0,
-        "f":0.9431818182
+        "p":0.8571428571,
+        "r":0.6037735849,
+        "f":0.7084870849
       },
       "PRECLUDE-DEFENSE":{
-        "p":0.9677419355,
-        "r":0.9677419355,
-        "f":0.9677419355
+        "p":0.9285714286,
+        "r":0.2321428571,
+        "f":0.3714285714
       },
       "CRIME-OBJECT-PSYCHOLOGICAL":{
-        "p":0.9363057325,
-        "r":0.9264705882,
-        "f":0.9313621964
+        "p":0.8961748634,
+        "r":0.7790973872,
+        "f":0.833545108
       },
       "ESCAPE-FROM-CRIME-SCENE":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
+        "p":0.9406779661,
+        "r":0.649122807,
+        "f":0.76816609
       },
       "ACTOR-UNDERAGE":{
-        "p":1.0,
-        "r":0.8666666667,
-        "f":0.9285714286
+        "p":0.6551724138,
+        "r":0.7037037037,
+        "f":0.6785714286
       },
       "VOLUNTARY-CONFESSION":{
-        "p":1.0,
-        "r":0.9735682819,
-        "f":0.9866071429
+        "p":0.8411764706,
+        "r":0.6589861751,
+        "f":0.7390180879
       },
       "RECURRENCE":{
-        "p":0.9838274933,
-        "r":1.0,
-        "f":0.9918478261
+        "p":0.8916408669,
+        "r":0.8396501458,
+        "f":0.8648648649
       },
       "RELATIVE":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
+        "p":0.8333333333,
+        "r":0.4545454545,
+        "f":0.5882352941
       },
       "MURDER":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
+        "p":0.0,
+        "r":0.0,
+        "f":0.0
       },
       "VICTIM-DECEASED":{
         "p":1.0,
-        "r":1.0,
-        "f":1.0
-      },
-      "ACTOR-OVER-SEVENTY":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
-      },
-      "SOCIAL-REASON":{
-        "p":0.776119403,
-        "r":0.9285714286,
-        "f":0.8455284553
-      },
-      "VICTIM-OVER-SIXTY":{
-        "p":0.9756097561,
-        "r":1.0,
-        "f":0.987654321
+        "r":0.5,
+        "f":0.6666666667
       },
       "VICTIM-WOMAN":{
-        "p":0.8898128898,
-        "r":1.0,
-        "f":0.9416941694
+        "p":0.8112244898,
+        "r":0.419525066,
+        "f":0.5530434783
+      },
+      "ACTOR-OVER-SEVENTY":{
+        "p":0.0,
+        "r":0.0,
+        "f":0.0
+      },
+      "SOCIAL-REASON":{
+        "p":0.0,
+        "r":0.0,
+        "f":0.0
+      },
+      "VICTIM-OVER-SIXTY":{
+        "p":0.0,
+        "r":0.0,
+        "f":0.0
       },
       "ACTOR-UNDER-TWENTY-ONE":{
-        "p":0.9402985075,
-        "r":0.9497487437,
-        "f":0.945
+        "p":0.7272727273,
+        "r":0.0467836257,
+        "f":0.0879120879
       },
       "INTENTION-ECONOMIC-ADVANTAGE":{
-        "p":0.9444444444,
-        "r":1.0,
-        "f":0.9714285714
+        "p":0.75,
+        "r":0.2142857143,
+        "f":0.3333333333
       },
       "INTENTION-DEATH":{
-        "p":1.0,
-        "r":1.0,
-        "f":1.0
+        "p":0.0,
+        "r":0.0,
+        "f":0.0
       },
       "VICTIM-UNDER-FOURTEEN":{
         "p":0.0,
@@ -173,7 +186,7 @@
         "f":0.0
       }
     },
-    "tok2vec_loss":2818.2205881297,
-    "ner_loss":1484.7147855736
+    "tok2vec_loss":291.6452851138,
+    "ner_loss":2224.1470967379
   }
 }
