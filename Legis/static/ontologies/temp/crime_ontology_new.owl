@@ -1,0 +1,1446 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10"
+         xmlns="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/cleyton/ontologies/2018/5/untitled-ontology-10"/>
+
+<owl:ObjectProperty rdf:about="#allows">
+  <owl:inverseOf rdf:resource="#isAllowedBy"/>
+  <rdfs:domain rdf:resource="#LegalRule"/>
+  <rdfs:range rdf:resource="#QualifiedSituation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAllowedBy"/>
+
+<owl:ObjectProperty rdf:about="#bears">
+  <rdfs:domain rdf:resource="#Agent"/>
+  <rdfs:range rdf:resource="#IntrinsecMoment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#causedBy">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#MentalMoment"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#defines">
+  <owl:inverseOf rdf:resource="#isDefinedBy"/>
+  <rdfs:domain rdf:resource="#LegalNormativeDescription"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#LegalAgent"/>
+        <rdf:Description rdf:about="#LegalObject"/>
+        <rdf:Description rdf:about="#Moment"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDefinedBy"/>
+
+<owl:ObjectProperty rdf:about="#dependenceOf"/>
+
+<owl:ObjectProperty rdf:about="#disallows">
+  <owl:inverseOf rdf:resource="#isDisallowedBy"/>
+  <rdfs:domain rdf:resource="#LegalRule"/>
+  <rdfs:range rdf:resource="#QualifiedSituation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isDisallowedBy"/>
+
+<owl:ObjectProperty rdf:about="#hasCircumstance">
+  <owl:inverseOf rdf:resource="#isPartOfSituation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOfSituation">
+  <rdfs:subPropertyOf rdf:resource="#isPartOf"/>
+  <rdfs:domain rdf:resource="#Circumstance"/>
+  <rdfs:range rdf:resource="#QualifiedSituation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCivilRepresentant">
+  <rdfs:domain rdf:resource="#JuridicalPerson"/>
+  <rdfs:range rdf:resource="#NaturalPerson"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCriminalAct">
+  <owl:inverseOf rdf:resource="#hasDisallowedSituation"/>
+  <rdfs:domain rdf:resource="#Situation"/>
+  <rdfs:range rdf:resource="#CriminalAct"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasDisallowedSituation">
+  <rdfs:subPropertyOf rdf:resource="#hasPosSituation"/>
+  <rdfs:domain rdf:resource="#CriminalAct"/>
+  <rdfs:range rdf:resource="#DisallowedSituation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPosSituation">
+  <owl:inverseOf rdf:resource="#isPosStateOf"/>
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Situation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasEndurant"/>
+
+<owl:ObjectProperty rdf:about="#isPosStateOf"/>
+
+<owl:ObjectProperty rdf:about="#hasPreSituation">
+  <rdfs:domain rdf:resource="#Event"/>
+  <rdfs:range rdf:resource="#Situation"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasPunishment">
+  <rdfs:domain rdf:resource="#LegalRule"/>
+  <rdfs:range rdf:resource="#PunishmentAct"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasRegister">
+  <rdfs:domain rdf:resource="#Agent"/>
+  <rdfs:range rdf:resource="#Register"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasViolatedObject"/>
+
+<owl:ObjectProperty rdf:about="#inheresIn">
+  <rdfs:domain rdf:resource="#IntentionalMoment"/>
+  <rdfs:range rdf:resource="#Agent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#injures">
+  <rdfs:domain rdf:resource="#ActiveAgent"/>
+  <rdfs:range rdf:resource="#PassiveAgent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAssociatedTo">
+  <rdfs:domain rdf:resource="#CrimeObject"/>
+  <rdfs:range rdf:resource="#PassiveAgent"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isAuthorOf">
+  <owl:inverseOf rdf:resource="#performanceOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#performanceOf">
+  <rdfs:subPropertyOf rdf:resource="#participationOf"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isChosenwrt">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+  <rdfs:domain rdf:resource="#LegalRule"/>
+  <rdfs:range rdf:resource="#LegalRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOf"/>
+
+<owl:ObjectProperty rdf:about="#isPartOfPositiveLaw">
+  <rdfs:subPropertyOf rdf:resource="#isPartOf"/>
+  <rdfs:domain rdf:resource="#LegalNorm"/>
+  <rdfs:range rdf:resource="#PositiveLaw"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isPartOfRule">
+  <rdfs:subPropertyOf rdf:resource="#isPartOf"/>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#PunishmentAct"/>
+        <rdf:Description rdf:about="#QualifiedSituation"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range rdf:resource="#LegalRule"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#isQualifiedBy">
+  <owl:inverseOf rdf:resource="#qualifies"/>
+  <rdfs:domain rdf:resource="#QualifiedSituation"/>
+  <rdfs:range rdf:resource="#Qualification"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#qualifies"/>
+
+<owl:ObjectProperty rdf:about="#isRecognizedBy">
+  <owl:inverseOf rdf:resource="#recognizes"/>
+  <rdfs:domain rdf:resource="#PositiveLaw"/>
+  <rdfs:range rdf:resource="#State"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#recognizes"/>
+
+<owl:ObjectProperty rdf:about="#ldefines_remover_talvez">
+  <rdfs:subPropertyOf rdf:resource="#defines"/>
+  <rdfs:domain rdf:resource="#PositiveLaw"/>
+  <rdfs:range rdf:resource="#CrimeAgent"/>
+  <rdfs:range rdf:resource="#CrimeObject"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#match">
+  <rdfs:domain rdf:resource="#FelonyOmission"/>
+  <rdfs:range rdf:resource="#ComissiveCrime"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#mediates">
+  <rdfs:domain rdf:resource="#Relator"/>
+  <rdfs:range rdf:resource="#Endurant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#overrules">
+  <rdfs:subPropertyOf rdf:resource="#isChosenwrt"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#participationOf">
+  <rdfs:domain rdf:resource="#Participation"/>
+  <rdfs:range rdf:resource="#Endurant"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#protects">
+  <rdfs:domain rdf:resource="#Guarantor"/>
+  <rdfs:range rdf:resource="#Guaranteed"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#specializes">
+  <rdfs:subPropertyOf rdf:resource="#isChosenwrt"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#TransitiveProperty"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#updates">
+  <rdfs:subPropertyOf rdf:resource="#isChosenwrt"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#violates">
+  <rdfs:domain rdf:resource="#UnlawfulEvent"/>
+  <rdfs:range rdf:resource="#CrimeObject"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#LegalRule">
+  <rdfs:subClassOf rdf:resource="#LegalNorm"/>
+  <owl:disjointWith rdf:resource="#Principle"/>
+</owl:Class>
+
+<owl:Class rdf:about="#QualifiedSituation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isQualifiedBy"/>
+      <owl:someValuesFrom rdf:resource="#Qualification"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Situation"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isPartOfRule"/>
+      <owl:someValuesFrom rdf:resource="#LegalRule"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Agent">
+  <rdfs:subClassOf rdf:resource="#Substantial"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IntrinsecMoment">
+  <rdfs:subClassOf rdf:resource="#Moment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Event">
+  <rdfs:subClassOf rdf:resource="#Perdurant"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPosSituation"/>
+      <owl:someValuesFrom rdf:resource="#Situation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasPreSituation"/>
+      <owl:someValuesFrom rdf:resource="#Situation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#MentalMoment">
+  <rdfs:subClassOf rdf:resource="#IntentionalMoment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalNormativeDescription">
+  <rdfs:subClassOf rdf:resource="#LegalObject"/>
+  <rdfs:subClassOf rdf:resource="#NormativeDescription"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#defines"/>
+      <owl:someValuesFrom rdf:resource="#LegalAgent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#defines"/>
+      <owl:someValuesFrom rdf:resource="#LegalObject"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalAgent">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isDefinedBy"/>
+      <owl:someValuesFrom rdf:resource="#LegalNormativeDescription"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalObject">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isDefinedBy"/>
+      <owl:someValuesFrom rdf:resource="#LegalNormativeDescription"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Moment">
+  <rdfs:subClassOf rdf:resource="#Endurant"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#dependenceOf"/>
+      <owl:someValuesFrom rdf:resource="#Substantial"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:disjointWith rdf:resource="#Substantial"/>
+</owl:Class>
+
+<owl:Class rdf:about="#JuridicalPerson">
+  <rdfs:subClassOf rdf:resource="#InstitutionalAgent"/>
+  <rdfs:subClassOf>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasCivilRepresentant"/>
+          <owl:someValuesFrom rdf:resource="#NaturalPerson"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasRegister"/>
+          <owl:someValuesFrom rdf:resource="#CNPJ"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#NaturalPerson">
+  <rdfs:subClassOf rdf:resource="#PhysicalAgent"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasRegister"/>
+      <owl:someValuesFrom rdf:resource="#CPF"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Situation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasEndurant"/>
+      <owl:someValuesFrom rdf:resource="#Endurant"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Endurant"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CriminalAct">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#TypicalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#causedBy"/>
+          <owl:someValuesFrom rdf:resource="#Intention"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#performanceOf"/>
+          <owl:someValuesFrom rdf:resource="#ActiveAgent"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalAct"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DisallowedSituation">
+  <rdfs:subClassOf rdf:resource="#QualifiedSituation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PunishmentAct">
+  <rdfs:subClassOf rdf:resource="#ActionContribution"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isPartOfRule"/>
+      <owl:someValuesFrom rdf:resource="#LegalRule"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#performanceOf"/>
+      <owl:someValuesFrom rdf:resource="#State"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Register">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#IntentionalMoment">
+  <rdfs:subClassOf rdf:resource="#IntrinsecMoment"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inheresIn"/>
+      <owl:someValuesFrom rdf:resource="#Agent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ActiveAgent">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isAuthorOf"/>
+      <owl:someValuesFrom rdf:resource="#CriminalAct"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#CrimeAgent"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#injures"/>
+      <owl:someValuesFrom rdf:resource="#PassiveAgent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:disjointWith rdf:resource="#PassiveAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PassiveAgent">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#PassiveJuridicalPerson"/>
+        <rdf:Description rdf:about="#PassivePerson"/>
+        <rdf:Description rdf:about="#PassiveSociety"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#CrimeAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrimeObject">
+  <rdfs:subClassOf rdf:resource="#LegalObject"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isAssociatedTo"/>
+      <owl:someValuesFrom rdf:resource="#PassiveAgent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isDefinedBy"/>
+      <owl:someValuesFrom rdf:resource="#PositiveLaw"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalNorm">
+  <rdfs:subClassOf rdf:resource="#LegalNormativeDescription"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#defines"/>
+      <owl:someValuesFrom rdf:resource="#Qualification"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isPartOfPositiveLaw"/>
+      <owl:someValuesFrom rdf:resource="#PositiveLaw"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#PositiveLaw">
+  <rdfs:subClassOf rdf:resource="#LegalNormativeDescription"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isRecognizedBy"/>
+      <owl:someValuesFrom rdf:resource="#State"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#ldefines_remover_talvez"/>
+      <owl:someValuesFrom rdf:resource="#CrimeAgent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#ldefines_remover_talvez"/>
+      <owl:someValuesFrom rdf:resource="#CrimeObject"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Circumstance">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Aggravating"/>
+        <rdf:Description rdf:about="#Mitigating"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Situation"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isPartOfSituation"/>
+      <owl:someValuesFrom rdf:resource="#QualifiedSituation"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Qualification">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#LegalRule"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#QualifiedSituation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#State">
+  <rdfs:subClassOf rdf:resource="#InstitutionalAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrimeAgent">
+  <rdfs:subClassOf rdf:resource="#LegalAgent"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isDefinedBy"/>
+      <owl:someValuesFrom rdf:resource="#PositiveLaw"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#FelonyOmission">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#CulpableEvent"/>
+        <rdf:Description rdf:about="#LegalFelonyOmission"/>
+        <rdf:Description rdf:about="#UnlawfulEvent"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#OmissiveCrime"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#match"/>
+      <owl:someValuesFrom rdf:resource="#ComissiveCrime"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ComissiveCrime">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#CriminalAct"/>
+        <rdf:Description rdf:about="#CulpableEvent"/>
+        <rdf:Description rdf:about="#UnlawfulEvent"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Crime"/>
+  <owl:disjointWith rdf:resource="#OmissiveCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Relator">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#mediates"/>
+      <owl:onClass rdf:resource="#Endurant"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">2</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Moment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Endurant"/>
+
+<owl:Class rdf:about="#Participation">
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Guarantor">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#protects"/>
+      <owl:someValuesFrom rdf:resource="#Guaranteed"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Guaranteed">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UnlawfulEvent">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#LegalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#violates"/>
+          <owl:someValuesFrom rdf:resource="#CrimeObject"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalEvent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Ability">
+  <rdfs:subClassOf rdf:resource="#IntrinsecMoment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AbstractObject">
+  <rdfs:subClassOf rdf:resource="#CrimeObject"/>
+  <rdfs:subClassOf rdf:resource="#SocialObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SocialObject">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AbuseOfAuthority">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Aggravating">
+  <rdfs:subClassOf rdf:resource="#Circumstance"/>
+  <owl:disjointWith rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AbuseOfPower">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Action">
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ActionContribution">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#performanceOf"/>
+      <owl:someValuesFrom rdf:resource="#Agent"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Action"/>
+  <rdfs:subClassOf rdf:resource="#AgentParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentParticipation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#participationOf"/>
+      <owl:someValuesFrom rdf:resource="#Agent"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Participation"/>
+  <owl:disjointWith rdf:resource="#ObjectParticipation[ObjectParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Adult">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <owl:disjointWith rdf:resource="#Underage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Underage">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Substantial">
+  <rdfs:subClassOf rdf:resource="#Endurant"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentMisfortune">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentOverSeventy">
+  <rdfs:subClassOf rdf:resource="#Adult"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentOverSixty">
+  <rdfs:subClassOf rdf:resource="#Adult"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ObjectParticipation[ObjectParticipation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#participationOf"/>
+      <owl:someValuesFrom rdf:resource="#Object"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Participation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentUnderFourteen">
+  <rdfs:subClassOf rdf:resource="#Underage"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AgentUnderTwentyOne">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Mitigating">
+  <rdfs:subClassOf rdf:resource="#Circumstance"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AllowedSituation">
+  <rdfs:subClassOf rdf:resource="#QualifiedSituation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AncientRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Belief">
+  <rdfs:subClassOf rdf:resource="#MentalMoment"/>
+  <owl:disjointWith rdf:resource="#Desire"/>
+  <owl:disjointWith rdf:resource="#Intention"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Desire">
+  <rdfs:subClassOf rdf:resource="#MentalMoment"/>
+  <owl:disjointWith rdf:resource="#Intention"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Intention">
+  <rdfs:subClassOf rdf:resource="#Commitment"/>
+  <rdfs:subClassOf rdf:resource="#MentalMoment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CNPJ">
+  <rdfs:subClassOf rdf:resource="#Register"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CPF">
+  <rdfs:subClassOf rdf:resource="#Register"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CollectiveSocialAgent">
+  <rdfs:subClassOf rdf:resource="#SocialAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SocialAgent">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CulpableEvent">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#LegalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#participationOf"/>
+          <owl:someValuesFrom rdf:resource="#CrimeAuthor"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalEvent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Crime">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#CulpableEvent"/>
+        <rdf:Description rdf:about="#TypicalEvent"/>
+        <rdf:Description rdf:about="#UnlawfulEvent"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Event"/>
+</owl:Class>
+
+<owl:Class rdf:about="#OmissiveCrime">
+  <rdfs:subClassOf rdf:resource="#Crime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Commitment"/>
+
+<owl:Class rdf:about="#ConcealingOtherCrime">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ConflictSituation">
+  <rdfs:subClassOf rdf:resource="#QualifiedSituation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TypicalEvent">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#LegalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPosSituation"/>
+          <owl:someValuesFrom rdf:resource="#DisallowedSituation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalEvent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrimeAuthor">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#ActiveAgent"/>
+        <rdf:Description rdf:about="#CriminallyLiable"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#ActiveAgent"/>
+  <rdfs:subClassOf rdf:resource="#CriminallyLiable"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CriminallyLiable">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Adult"/>
+        <rdf:Description rdf:about="#MentallyHealthy"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Adult"/>
+  <rdfs:subClassOf rdf:resource="#MentallyHealthy"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CrimeRelator">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#ActiveAgent"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#PassiveAgent"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalRelator">
+  <rdfs:subClassOf rdf:resource="#Relator"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#dependenceOf"/>
+      <owl:someValuesFrom rdf:resource="#Principle"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#isDefinedBy"/>
+      <owl:someValuesFrom rdf:resource="#LegalNormativeDescription"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalAct">
+  <rdfs:subClassOf rdf:resource="#ActionContribution"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#performanceOf"/>
+      <owl:someValuesFrom rdf:resource="#LegalAgent"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#CriminalLawRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CriminallyIncapable">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#MentallySick"/>
+        <rdf:Description rdf:about="#Underage"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <owl:disjointWith rdf:resource="#CriminallyLiable"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MentallySick">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MentallyHealthy">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <owl:disjointWith rdf:resource="#MentallySick"/>
+</owl:Class>
+
+<owl:Class rdf:about="#CruelMeansEmployment">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalEvent">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#participationOf"/>
+      <owl:someValuesFrom rdf:resource="#LegalAgent"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#AgentParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DamageRepair">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DeprivingLiberty">
+  <rdfs:subClassOf rdf:resource="#PunishmentAct"/>
+  <owl:disjointWith rdf:resource="#Fine"/>
+  <owl:disjointWith rdf:resource="#RestrictingRight"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fine">
+  <rdfs:subClassOf rdf:resource="#PunishmentAct"/>
+  <owl:disjointWith rdf:resource="#RestrictingRight"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RestrictingRight">
+  <rdfs:subClassOf rdf:resource="#PunishmentAct"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DomesticViolence">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DrinkingDriveLawRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#DutyToAct">
+  <rdfs:subClassOf rdf:resource="#SocialCommitment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SocialCommitment">
+  <rdfs:subClassOf rdf:resource="#Commitment"/>
+  <rdfs:subClassOf rdf:resource="#SocialMoment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EnvironmentLawRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#EscapeFromCrimeScene">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Perdurant"/>
+
+<owl:Class rdf:about="#LegalFelonyOmission">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SkilledGuarantorParticipation"/>
+        <rdf:Description rdf:about="#TypicalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPreSituation"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#MandatorySituation"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#hasEndurant"/>
+                  <owl:someValuesFrom rdf:resource="#UnfulfilledSpecificDutyToAct"/>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#SkilledGuarantorParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FemaleDiscrimination">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#FrivolousReason">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Fulfilled">
+  <rdfs:subClassOf rdf:resource="#Commitment"/>
+  <owl:disjointWith rdf:resource="#Unfulfilled"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Unfulfilled">
+  <rdfs:subClassOf rdf:resource="#Commitment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GeneralRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#GuarantorSkilledPerson">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Guarantor"/>
+        <rdf:Description rdf:about="#SkilledPerson"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#Guarantor"/>
+  <rdfs:subClassOf rdf:resource="#SkilledPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SkilledPerson">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#bears"/>
+      <owl:someValuesFrom rdf:resource="#Ability"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Handicapped">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#HeatOfPassion">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Honor">
+  <rdfs:subClassOf rdf:resource="#AbstractObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Incriminating">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#disallows"/>
+          <owl:someValuesFrom rdf:resource="#DisallowedSituation"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#disallows"/>
+          <owl:allValuesFrom rdf:resource="#DisallowedSituation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+  <owl:disjointWith rdf:resource="#NonIncriminating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NonIncriminating">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#allows"/>
+          <owl:someValuesFrom rdf:resource="#AllowedSituation"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#allows"/>
+          <owl:allValuesFrom rdf:resource="#AllowedSituation"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#InferiorRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#overrules"/>
+      <owl:someValuesFrom rdf:resource="#InferiorRule"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#InstitutionalAgent">
+  <rdfs:subClassOf rdf:resource="#SocialAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalCareRelator">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#Guaranteed"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#mediates"/>
+          <owl:someValuesFrom rdf:resource="#Guarantor"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UnfulfilledSpecificDutyToAct">
+  <rdfs:subClassOf rdf:resource="#SpecificDutyToAct"/>
+  <rdfs:subClassOf rdf:resource="#Unfulfilled"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MandatorySituation">
+  <rdfs:subClassOf rdf:resource="#AllowedSituation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SkilledGuarantorParticipation">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#causedBy"/>
+          <owl:someValuesFrom rdf:resource="#Desire"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#participationOf"/>
+          <owl:someValuesFrom rdf:resource="#GuarantorSkilledPerson"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#SkilledAgentParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NormativeDescription">
+  <rdfs:subClassOf rdf:resource="#SocialObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Object">
+  <rdfs:subClassOf rdf:resource="#Substantial"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LegalOmission">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#SkilledAgentParticipation"/>
+        <rdf:Description rdf:about="#TypicalEvent"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPreSituation"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:intersectionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#MandatorySituation"/>
+                <owl:Restriction>
+                  <owl:onProperty rdf:resource="#hasEndurant"/>
+                  <owl:someValuesFrom rdf:resource="#UnfulfilledDutyToAct"/>
+                </owl:Restriction>
+              </owl:intersectionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#TypicalEvent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UnfulfilledDutyToAct">
+  <rdfs:subClassOf rdf:resource="#DutyToAct"/>
+  <rdfs:subClassOf rdf:resource="#Unfulfilled"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SkilledAgentParticipation">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#participationOf"/>
+      <owl:someValuesFrom rdf:resource="#SkilledPerson"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#AgentParticipation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Principle">
+  <rdfs:subClassOf rdf:resource="#LegalNorm"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LexPosteriorRelator">
+  <rdfs:subClassOf rdf:resource="#NormRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NormRelator">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#mediates"/>
+      <owl:someValuesFrom rdf:resource="#LegalRule"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#LegalRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LexSpecialisRelator">
+  <rdfs:subClassOf rdf:resource="#NormRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#LexSuperiorRelator">
+  <rdfs:subClassOf rdf:resource="#NormRelator"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Life">
+  <rdfs:subClassOf rdf:resource="#AbstractObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Man">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <owl:disjointWith rdf:resource="#Woman"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Woman">
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MaterialObject">
+  <rdfs:subClassOf rdf:resource="#CrimeObject"/>
+  <rdfs:subClassOf rdf:resource="#PhysicalObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalObject">
+  <rdfs:subClassOf rdf:resource="#Object"/>
+</owl:Class>
+
+<owl:Class rdf:about="#MoralReason">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalAgent">
+  <rdfs:subClassOf rdf:resource="#Agent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#NoHarmReducation">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Obligation">
+  <rdfs:subClassOf rdf:resource="#Permission"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Permission">
+  <rdfs:subClassOf rdf:resource="#Qualification"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PassiveJuridicalPerson">
+  <rdfs:subClassOf rdf:resource="#JuridicalPerson"/>
+  <rdfs:subClassOf rdf:resource="#PassiveAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PassivePerson">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#NaturalPerson"/>
+        <rdf:Description rdf:about="#PassiveAgent"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+  <rdfs:subClassOf rdf:resource="#PassiveAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PassiveSociety">
+  <rdfs:subClassOf rdf:resource="#PassiveAgent"/>
+  <rdfs:subClassOf rdf:resource="#Society"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Society">
+  <rdfs:subClassOf rdf:resource="#CollectiveSocialAgent"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PhysicalBody">
+  <rdfs:subClassOf rdf:resource="#MaterialObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PrecludeDefense">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Pregnant">
+  <rdfs:subClassOf rdf:resource="#Woman"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Prohibition">
+  <rdfs:subClassOf rdf:resource="#Permission"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PropertyLawRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Psychological">
+  <rdfs:subClassOf rdf:resource="#AbstractObject"/>
+</owl:Class>
+
+<owl:Class rdf:about="#PureOmissiveCrime">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#CulpableEvent"/>
+        <rdf:Description rdf:about="#LegalOmission"/>
+        <rdf:Description rdf:about="#UnlawfulEvent"/>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf rdf:resource="#OmissiveCrime"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RecentRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#updates"/>
+      <owl:someValuesFrom rdf:resource="#AncientRule"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Recurrence">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Relative">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#RelativePresence">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#ResistibleDuress">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SocialMoment">
+  <rdfs:subClassOf rdf:resource="#IntentionalMoment"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SocialReason">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecificDutyToAct">
+  <rdfs:subClassOf rdf:resource="#DutyToAct"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#inheresIn"/>
+      <owl:someValuesFrom rdf:resource="#Guarantor"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#SpecificRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#specializes"/>
+      <owl:someValuesFrom rdf:resource="#GeneralRule"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#SuperiorRule">
+  <rdfs:subClassOf rdf:resource="#LegalRule"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Turmoil">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#UnfamiliairtyofLaw">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#VoluntaryConfession">
+  <rdfs:subClassOf rdf:resource="#Mitigating"/>
+</owl:Class>
+
+<owl:Class rdf:about="#WithoutImmediateAid">
+  <rdfs:subClassOf rdf:resource="#Aggravating"/>
+</owl:Class>
+
+<ActiveAgent rdf:about="#Henrique">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#Adult"/>
+  <rdf:type rdf:resource="#MentallyHealthy"/>
+  <isAuthorOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/8/untitled-ontology-23#subtraction_Henrique_Almeida."/>
+  <isAuthorOf rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/8/untitled-ontology-23#agression_Henrique_Almeida."/>
+</ActiveAgent>
+
+<PassivePerson rdf:about="#Almeida.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasViolatedObject rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/8/untitled-ontology-23#CRIME-OBJECT-PSYCHOLOGICAL"/>
+  <hasViolatedObject rdf:resource="#CRIME-OBJECT-PSYCHOLOGICAL"/>
+</PassivePerson>
+
+<Situation rdf:about="#situation_Henrique_Almeida.">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasEndurant rdf:resource="#Almeida."/>
+  <hasCriminalAct rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/8/untitled-ontology-23#subtraction_Henrique_Almeida."/>
+  <hasCriminalAct rdf:resource="http://www.semanticweb.org/cleyton/ontologies/2018/8/untitled-ontology-23#agression_Henrique_Almeida."/>
+</Situation>
+
+<Psychological rdf:about="#CRIME-OBJECT-PSYCHOLOGICAL">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</Psychological>
+
+<owl:Restriction>
+  <owl:onProperty rdf:resource="#hasRegister"/>
+  <owl:someValuesFrom rdf:resource="#CPF"/>
+  <rdfs:subClassOf rdf:resource="#NaturalPerson"/>
+</owl:Restriction>
+
+<owl:Class>
+  <owl:intersectionOf rdf:parseType="Collection">
+    <rdf:Description rdf:about="#AllowedSituation"/>
+    <rdf:Description rdf:about="#DisallowedSituation"/>
+  </owl:intersectionOf>
+  <rdfs:subClassOf rdf:resource="#ConflictSituation"/>
+</owl:Class>
+
+
+</rdf:RDF>
